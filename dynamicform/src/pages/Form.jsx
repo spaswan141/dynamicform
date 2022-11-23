@@ -55,8 +55,14 @@ const Form = () => {
       name: name,
       age: age,
     };
-    details.push({ ...formFields,...payload });
-     localStorage.setItem("userList",JSON.stringify(details));
+    if(payload.name.length>5 && payload.age.length>0){
+      alert("Your Information has been saved successfully")
+      details.push({ ...formFields,...payload });
+       localStorage.setItem("userList",JSON.stringify(details));
+    }else{
+      alert("Please Fill all the details Correctly")
+    }
+    
   };
 
   const addFields = () => {
@@ -100,7 +106,7 @@ const Form = () => {
                       ? "Enter First Name and Last Name"
                       : null
                   }
-                  required
+                  required={true}
                   fullWidth
                   id="firstName"
                   label="Full Name"

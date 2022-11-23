@@ -1,18 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import "./user.css"
 const UserList = () => {
 var details=JSON.parse(localStorage.getItem("userList"))||[]
-const [data,setData]=useState([])
-// useEffect(()=>{
-//     for(let i=0;i<details.length; i++) {
-        
-//         // for(let j=0; j<details[0].length; j++) {
-//         //     setData(details[i][j])
-//         // }
-//     }
-// },[])
 
-console.log(details)
+//console.log(details)
   return (
     <div className="mainBody">
     {details.map((item,index)=>(
